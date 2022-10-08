@@ -4,7 +4,7 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ flex-loan",
+    "deploy": "graph deploy --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ arthurmr96/flex-loan --access-token 89e79a81da83452e9035b6e56b8599b5",
     "create-local": "graph create --node http://localhost:8020/ flex-loan",
     "remove-local": "graph remove --node http://localhost:8020/ flex-loan",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 flex-loan",

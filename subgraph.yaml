@@ -16,7 +16,6 @@ dataSources:
       entities:
         - Lender
         - Loan
-        - Withdraw
       abis:
         - name: FlexLoanVault
           file: ./abis/FlexLoanVault.json
