@@ -1,6 +1,19 @@
-type ExampleEntity @entity {
+type Loan @entity {
   id: ID!
-  count: BigInt!
-  lender: Bytes! # address
+  collateralTargetAddress: Bytes! # address
+  collateralTargetTokenId: BigInt!
+  amount: BigInt!
+  liquidatedAmount: BigInt!
+  duration: BigInt! # uint256
+  interestRate: BigInt! # uint256
+  status: String!
+  createdAt: BigInt! # uint256
+  updatedAt: BigInt! # uint256
+}
+
+type Lender @entity {
+  id: ID!
   amount: BigInt! # uint256
+  createdAt: BigInt! # uint256
+  updatedAt: BigInt! # uint256
 }
