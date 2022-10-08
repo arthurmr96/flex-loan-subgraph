@@ -1,0 +1,35 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: FlexLoanVault
+    network: goerli
+    source:
+      address: "0xc50faA4f820B5D964090111c735d5DCAe1CDf099"
+      abi: FlexLoanVault
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Lend
+        - LoanCreation
+        - LoanLiquidation
+        - LoanPayback
+        - Withdraw
+      abis:
+        - name: FlexLoanVault
+          file: ./abis/FlexLoanVault.json
+      eventHandlers:
+        - event: Lend(address,uint256,uint256)
+          handler: handleLend
+        - event: LoanCreation(address,address,uint256,uint256,uint256,uint256,uint256)
+          handler: handleLoanCreation
+        - event: LoanLiquidation(address,uint256,uint256)
+          handler: handleLoanLiquidation
+        - event: LoanPayback(address,uint256,uint256)
+          handler: handleLoanPayback
+        - event: Withdraw(address,uint256,uint256)
+          handler: handleWithdraw
+      file: ./src/flex-loan-vault.ts
