@@ -8,6 +8,7 @@ dataSources:
     source:
       address: "0xc50faA4f820B5D964090111c735d5DCAe1CDf099"
       abi: FlexLoanVault
+      startBlock: 7731246
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
