@@ -1,5 +1,6 @@
 type Loan @entity {
   id: ID!
+  borrower: Bytes!
   collateralTargetAddress: Bytes # address
   collateralTargetTokenId: BigInt
   amount: BigInt

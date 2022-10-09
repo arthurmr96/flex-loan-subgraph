@@ -6,9 +6,9 @@ dataSources:
     name: FlexLoanVault
     network: goerli
     source:
-      address: "0xc50faA4f820B5D964090111c735d5DCAe1CDf099"
+      address: "0x3227f9572a442fccC630CEBc036B41d1D3c0F48F"
       abi: FlexLoanVault
-      startBlock: 7731246
+      startBlock: 7737099
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -22,11 +22,11 @@ dataSources:
       eventHandlers:
         - event: Lend(address,uint256,uint256)
           handler: handleLend
-        - event: LoanCreation(address,address,uint256,uint256,uint256,uint256,uint256)
+        - event: LoanCreation(uint256,address,address,uint256,uint256,uint256,uint256,uint256)
           handler: handleLoanCreation
-        - event: LoanLiquidation(address,uint256,uint256)
+        - event: LoanLiquidation(uint256,address,uint256,uint256)
           handler: handleLoanLiquidation
-        - event: LoanPayback(address,uint256,uint256)
+        - event: LoanPayback(uint256,address,uint256,uint256)
           handler: handleLoanPayback
         - event: Withdraw(address,uint256,uint256)
           handler: handleWithdraw

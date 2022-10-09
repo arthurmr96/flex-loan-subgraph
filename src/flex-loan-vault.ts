@@ -56,8 +56,9 @@ export function handleLend(event: Lend): void {
 }
 
 export function handleLoanCreation(event: LoanCreation): void {
-    let entity = new Loan(event.params.borrower.toHex())
+    let entity = new Loan(event.params.index.toString())
 
+    entity.borrower = event.params.borrower
     entity.amount = event.params.loanAmount
     entity.collateralTargetAddress = event.params.collateralTargetAddress
     entity.collateralTargetTokenId = event.params.collateralTargetTokenId
@@ -71,10 +72,10 @@ export function handleLoanCreation(event: LoanCreation): void {
 }
 
 export function handleLoanLiquidation(event: LoanLiquidation): void {
-    let entity = Loan.load(event.params.borrower.toHex())
+    let entity = Loan.load(event.params.index.toString())
 
     if (!entity) {
-        entity = new Loan(event.params.borrower.toHex())
+        entity = new Loan(event.params.index.toString())
     }
 
     entity.liquidatedAmount = entity.amount
@@ -85,10 +86,10 @@ export function handleLoanLiquidation(event: LoanLiquidation): void {
 }
 
 export function handleLoanPayback(event: LoanPayback): void {
-    let entity = Loan.load(event.params.borrower.toHex())
+    let entity = Loan.load(event.params.index.toString())
 
     if (!entity) {
-        entity = new Loan(event.params.borrower.toHex())
+        entity = new Loan(event.params.index.toString())
     }
 
     entity.liquidatedAmount = entity.amount
