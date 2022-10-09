@@ -6,7 +6,7 @@ dataSources:
     name: FlexLoanVault
     network: goerli
     source:
-      address: "0xa20EB2573a8fe6872da89E0F3ec81c147d32F613"
+      address: "0xFE85406c4263ebBeCa63A57AF5C3C8e25dd4da23"
       abi: FlexLoanVault
       startBlock: 7737266
     mapping:
