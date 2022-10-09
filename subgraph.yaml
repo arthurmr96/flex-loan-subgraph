@@ -6,9 +6,9 @@ dataSources:
     name: FlexLoanVault
     network: goerli
     source:
-      address: "0x3227f9572a442fccC630CEBc036B41d1D3c0F48F"
+      address: "0xa20EB2573a8fe6872da89E0F3ec81c147d32F613"
       abi: FlexLoanVault
-      startBlock: 7737099
+      startBlock: 7737266
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
